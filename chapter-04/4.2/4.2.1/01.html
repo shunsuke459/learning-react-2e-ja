@@ -15,14 +15,22 @@
 
 <script>
     // React要素をブラウザに描画する
-    const dish = React.createElement("h1", null, "Baked Salmon");
+    const dish = React.createElement("h1", {key: "recipe-01"}, "Baked Salmon");
+    const dessert = React.createElement("h2", {key: 22}, "Coconut Cream Pie");
+    const list = React.createElement("ul", {key: "ingredients"},
+        React.createElement("li", null, "2 lb salmon"),
+        React.createElement("li", null, "5 sprigs fresh rosemary"),
+        React.createElement("li", null, "2 tablespoons olive oil"),
+    );
 
     ReactDOM.render(
-        dish,
+        [dish, dessert, list],
         document.getElementById('react-container')
     );
 
     console.log('dish', dish);
+
+    console.log('list', list);
 
 </script>
 
